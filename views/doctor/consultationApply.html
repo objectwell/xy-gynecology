@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>会诊详情</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
+    <link rel="stylesheet" href="../../css/consultation.css">
+</head>
+
+<body>
+    <ul class="consultation-info">
+        <li class="consultation-item active">
+            <div class="consultation_detail">
+                <h3>会诊申请医院信息</h3>
+                <div class="detail_text">
+                    <span>医院：湖南省肿瘤医院</span>
+                    <span>接诊医生：赵孟</span>
+                    <span>科室：妇产科</span>
+                </div>
+                <h3>会诊申请基本信息</h3>
+                <div class="detail_text">
+                    <span>会诊目的：进一步明确诊断</span>
+                    <span>会诊类型：普通会诊</span>
+                    <span>会诊团队：子宫肌瘤团队</span>
+                </div>
+                <h3>患者基本信息</h3>
+                <div class="detail_text">
+                    <span>姓名：王文君</span>
+                    <span>性别：女</span>
+                    <span>年龄：32</span>
+                </div>
+                <h3>患者基本信息</h3>
+                <div class="detail_text">
+                    <p>主诉：　女性患者，32岁。育龄期妇女，停经近4个月，以“下腹痛2天”为主诉于我院急诊治疗。</p>
+                    <p>现病史：　女性患者，32岁。育龄期妇女，停经近4个月，以“下腹痛2天”为主诉于我院急诊治疗。</p>
+                    <p>既往史：　既往体健，无外伤及输血史，4年前于当地医院行剖宫产术。</p>
+                    <p>初步诊断：　子宫肌瘤</p>
+                </div>
+            </div>
+        </li>
+        <li class="consultation-item ">
+            <div class="consultation_detail">
+                <h3>患者信息资料</h3>
+                <div class="detail_down">
+                    <span> <img src="../../images/word.svg" alt="该患者基本信息.doc"> 该患者基本信息.doc</span>
+                    <span> <img src="../../images/pdf.svg" alt="该患者基本信息.doc"> 患者既往疾病及家族病史.pdf</span>
+
+                </div>
+                <h3>患者影像资料</h3>
+                <div class="detail_dicom">
+                    <div class="fl">
+                        <img src="../../images/dicom_01.jpg" alt="dicom">
+                    </div>
+                    <div class="fl">
+                        <img src="../../images/dicom_02.jpg" alt="dicom">
+                    </div>
+                    <div class="fl">
+                        <img src="../../images/dicom_03.jpg" alt="dicom">
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="consultation-item ">
+            <div class="consultation_detail">
+                <h3>会诊意见模板</h3>
+                <div class="detail_select"> 选择模板:
+                    <select name="modules" id="consultationModules">
+                        <option value="我的模板1">我的模板1</option>
+                        <option value="我的模板2">我的模板2</option>
+                        <option value="我的模板3">我的模板3</option>
+                        <option value="我的模板4">我的模板4</option>
+                        <option value="我的模板5">我的模板5</option>
+                        <option value="我的模板6">我的模板6</option>
+                    </select>
+                </div>
+                <h3>会诊意见</h3>
+                <div class="detail_string">
+                    <textarea name="" cols="30" rows="10" placeholder="请填写会诊意见" id="consultationOpinions"></textarea>
+                </div>
+                <div class="detail_submit">
+                    <span>提交</span>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="consultation-step">
+        <i class="iconfont icon-xiangshang1 pre"></i>
+        <span class="circle active"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <i class="iconfont icon-xiangshang next"></i>
+    </div>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script>
+    $(function () {
+        var $next = $(".next"),
+            $pre = $(".pre"),
+            $circles = $(".circle");
+        var $consultations = $(".consultation-item");
+
+        $next.on("click", function () {
+            $.each($circles, function (i, item) {
+                var $item = $(item);
+                if ($item.hasClass("active")) {
+                    var index = $item.index();
+                    if (index < 3) {
+                        $circles.removeClass("active");
+                        $circles.eq(index).addClass("active");
+
+                        $consultations.removeClass("active");
+                        $consultations.eq(index).addClass("active")
+                    }
+
+                    return false
+                }
+            })
+        })
+
+        $pre.on("click", function () {
+
+            $.each($circles, function (i, item) {
+                var $item = $(item);
+                if ($item.hasClass("active")) {
+                    var index = $item.index();
+                    if (index > 1) {
+                        $circles.removeClass("active");
+                        $circles.eq(index - 2).addClass("active");
+
+                        $consultations.removeClass("active");
+                        $consultations.eq(index - 2).addClass("active")
+                    }
+
+                    return false
+                }
+            })
+        })
+
+
+        $("#consultationModules").on("change",function(){
+            var $this = $(this);
+            var value = $this.val();
+            $("#consultationOpinions").text(value);
+        })
+
+        $(".detail_dicom img").on("click",function(){
+            window.top.location.replace("./dicom.html")
+        })
+    })
+
+
+
+
+</script>
+
+</html>

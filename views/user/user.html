@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>湘雅医院妇产科医联体</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../plug/css/layui.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
+    <link rel="stylesheet/less" href="../../css/common.less">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    <script src="../../js/less.min.js"></script>
+</head>
+
+<body class="doctor user">
+    <div class="layout">
+        <div class="left fl">
+            <div class="left-content">
+                <div class="title">
+                    湘雅医院妇产科医联体
+                </div>
+                <div class="info">
+                    <div class="img">
+                        <img src="../../images/user.png" alt="user">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">张瑜</span>
+                        <span class="user-role">医生</span>
+                        <p class="company">湘雅医院</p>
+                        <p class="department">妇产科</p>
+                    </div>
+                </div>
+                <div class="operation" id="operation">
+                    <div class="item clearfix " navLink="../doctor/doctor.html">
+                        <span class="icon icon-duanxin iconfont fl"></span>
+                        <span class="text fl">我的工作台</span>
+                    </div>
+                    <div class="item clearfix active">
+                        <span class="icon icon-bianji iconfont fl"></span>
+                        <span class="text fl">个人信息</span>
+                    </div>
+                    <div class="item clearfix" navLink="../../login.html">
+                        <span class="icon icon-login iconfont fl"></span>
+                        <span class="text fl">登出</span>
+                    </div>
+                </div>
+            </div>
+            <i id="fold" class="iconfont icon-menu-zhangkai-copy active fold"></i>
+        </div>
+        <div class="right main_right">
+            <div class="user_content container-high">
+                <div class="user_middle">
+                    <h3>个人信息</h3>
+                    <div class="user_detail clearfix">
+                        <div class="pic_top">
+                            <img src="../../images/user.png" />
+                        </div>
+                        <div class="info_top">
+                            <p>张瑜 医生</p>
+                            <p>中南大学湘雅医院</p>
+                            <p>妇产科</p>
+                        </div>
+                    </div>
+                    <div class="user_form">
+                        <h3>账户信息</h3>
+                        <div class="input_box">
+                            <ul class="clearfix">
+                                <li><label for="">登陆账号：</label> <input class="input_control" type="text"
+                                        value="zhangyu"></li>
+                                <li><label for="">登录手机：</label> <input class="input_control" type="text"
+                                        value="18111111111"></li>
+                                <li><label for="">联系邮箱：</label> <input class="input_control" type="text"
+                                        value="zhangyu@163.com"></li>
+                            </ul>
+                        </div>
+                        <h3>个人简介</h3>
+                        <div class="input_box">
+                            <textarea name="" id="" class="textarea_control" rows="10"> 中南大学湘雅医院妇产科主任</textarea>
+                        </div>
+                        <div class="form_button">
+                            <button>编辑资料</button>
+                            <button id="changePW">修改密码</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../plug/layui.js"></script>
+<script src="../../js/common/layer.js"></script>
+<script>
+    $(function () {
+        var navPaddingWidth = 40 + 29;
+        var $navLink = $("#navLink");
+        var $navItem = $navLink.find(".nav-item");
+        var length = $navItem.length;
+        var itemWidth = $($navItem[0]).width() + navPaddingWidth;
+
+        var navWidth = itemWidth * length;
+        $navLink.width(navWidth)
+        $left = $(".left");
+        var $fold = $("#fold");
+        $fold.on("click", function () {
+            var $this = $(this);
+
+            if ($this.hasClass("active")) {
+                $this.removeClass("icon-menu-zhangkai-copy active").addClass("icon-menu-zhangkai");
+                $left.css({
+                    width: "60px"
+                });
+
+            } else {
+                $this.removeClass("icon-menu-zhangkai").addClass("icon-menu-zhangkai-copy active");
+                $left.css({
+                    width: "300px"
+                });
+            }
+        })
+        $("#operation .item").on("click", function () {
+            var $this = $(this);
+            if ($this.hasClass("active")) return false;
+            var url = $this.attr("navLink");
+            window.location.replace(url)
+        })
+        $("#changePW").on("click", function () {
+            var layerContent = '<form class="layui-form">\
+                                    <div class="layui-form-item">\
+                                        <label class="layui-form-label">输入原密码</label>\
+                                        <div class="layui-input-block">\
+                                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="输入原密码" class="layui-input">\
+                                        </div>\
+                                    </div>\
+                                    <div class="layui-form-item">\
+                                        <label class="layui-form-label">输入新密码</label>\
+                                        <div class="layui-input-block">\
+                                        <input type="password" name="password" lay-verify="required" placeholder="输入新密码" autocomplete="off" class="layui-input">\
+                                        </div>\
+                                    </div>\
+                                    <div class="layui-form-item">\
+                                        <label class="layui-form-label">确定新密码</label>\
+                                        <div class="layui-input-block">\
+                                        <input type="password" name="password" lay-verify="required" placeholder="确定新密码" autocomplete="off" class="layui-input">\
+                                        </div>\
+                                    </div>\
+                                </form>'
+            layui.use(['layer', 'form'], function () {
+                var layer = layui.layer,
+                    form = layui.form;
+                baseLayer(layer, {
+                    title: "修改密码",
+                    content: layerContent,
+                    btn: '提交'
+                    
+                })
+            })
+        })
+
+    })
+</script>
+
+</html>

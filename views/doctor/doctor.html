@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>湘雅医院妇产科医联体</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
+    <link rel="stylesheet/less" href="../../css/common.less">
+    <link rel="stylesheet" href="../../plug/css/layui.css">
+    <script src="../../js/less.min.js"></script>
+</head>
+
+<body class="doctor">
+    <div class="layout">
+        <div class="left fl">
+            <div class="left-content">
+                <div class="title">
+                    湘雅医院妇产科医联体
+                </div>
+                <div class="info">
+                    <div class="img">
+                        <img src="../../images/user.png" alt="user">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">张瑜</span>
+                        <span class="user-role">医生</span>
+                        <p class="company">湘雅医院</p>
+                        <p class="department">妇产科</p>
+                    </div>
+                </div>
+                <div class="operation" id="operation">
+                    <div class="item clearfix active">
+                        <span class="icon icon-duanxin iconfont fl"></span>
+                        <span class="text fl">我的工作台</span>
+                    </div>
+                    <div class="item clearfix" navLink="../user/user.html">
+                        <span class="icon icon-bianji iconfont fl"></span>
+                        <span class="text fl">个人信息</span>
+                    </div>
+                    <div class="item clearfix" navLink="../../login.html">
+                        <span class="icon icon-login iconfont fl"></span>
+                        <span class="text fl">登出</span>
+                    </div>
+                </div>
+            </div>
+            <i id="fold" class="iconfont icon-menu-zhangkai-copy active fold"></i>
+        </div>
+        <div class="right">
+            <div class="top">
+                <div class="nav" id="navLink">
+                    <div class="nav-item fl" navLink="./consultation.html">
+                        <span class="icon iconfont icon-wenben"></span>
+                        <p>我的会诊</p>
+                    </div>
+                    <div class="nav-item fl">
+                        <span class="icon iconfont icon-yisheng"></span>
+                        <p>我的转诊</p>
+                    </div>
+                    <div class="nav-item fl">
+                        <span class="icon iconfont icon-tupian"></span>
+                        <p>智能影像诊断</p>
+                    </div>
+                    <div class="nav-item fl">
+                        <span class="icon iconfont icon-yonghu"></span>
+                        <p>我的患者</p>
+                    </div>
+                    <div class="nav-item fl" navLink="./research/research.html">
+                        <span class="icon iconfont icon-pingzi"></span>
+                        <p>我的科研</p>
+                    </div>
+                </div>
+            </div>
+            <iframe src="./router.html" frameborder="0" id="doctorIframe" class="doctor-iframe"></iframe>
+        </div>
+
+    </div>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/common/layer.js"></script>
+<script src="../../plug/layui.js"></script>
+<script>
+    $(function () {
+        var navPaddingWidth = 40 + 29;
+        var $navLink = $("#navLink");
+        var $navItem = $navLink.find(".nav-item");
+        var length = $navItem.length;
+        var itemWidth = $($navItem[0]).width() + navPaddingWidth;
+
+        var navWidth = itemWidth * length;
+        $navLink.width(navWidth)
+        $left = $(".left");
+        var $fold = $("#fold");
+        $fold.on("click", function () {
+            
+            var $this = $(this);
+
+            if ($this.hasClass("active")) {
+                $this.removeClass("icon-menu-zhangkai-copy active").addClass("icon-menu-zhangkai");
+                $left.css({
+                    width: "60px"
+                });
+            
+            } else {
+                $this.removeClass("icon-menu-zhangkai").addClass("icon-menu-zhangkai-copy active");
+                $left.css({
+                    width: "300px"
+                });
+                ;
+            }
+        })
+        $("#operation .item").on("click", function () {
+            var $this = $(this);
+            if ($this.hasClass("active")) return false;
+            var url = $this.attr("navLink");
+            window.location.replace(url)
+
+
+
+        })
+
+        $navItem.on("click", function () {
+            var $this = $(this);
+            var navLink = $this.attr("navLink");
+            if (navLink) {
+                $("#doctorIframe").attr("src", navLink);
+            } else {
+                layui.use('layer', function () {
+                    var layer = layui.layer;
+                    baseMsg(layer,"该功能正在开发中,敬请期待...",{icon: 6})
+                    
+                });
+            }
+        })
+
+    })
+</script>
+
+</html>

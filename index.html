@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中南大学湘雅医院妇产科医联体</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <link rel="stylesheet/less" href="./css/common.less">
+    <link rel="stylesheet/less" href="./css/index.less">
+    <script src="./js/less.min.js"></script>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="content">
+            <div class="header clearfix">
+                <div class="left fl">
+                    <div class="logo"></div>
+                    <div class="logo-text">
+                        <h3>中南大学湘雅医院</h3>
+                        <p>妇产科医联体</p>
+                    </div>
+                </div>
+                <div class="right fr">
+                    <ul class="clearfix">
+                        <li class="fl">找医生</li>
+                        <li class="fl">患者与访客</li>
+                        <li class="fl">健康图书馆</li>
+                        <li class="fl">临床科研</li>
+                        <li class="fl">关于我们</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="banner"></div>
+            <div class="tab-login clearfix">
+                <div class="login-item patient-login fl">
+                    <div class="icon-div clearfix">
+                        <span class="fl zhusheqi"></span>
+                        <p class="fl huanzhe">
+                            我是患者
+                        </p>
+                    </div>
+                    <div class="item-text text-huanzhe">
+                        <p>健康咨询，健康管理，患教中心</p>
+                    </div>
+                    <div class="item-btn huanzhe">
+                        点我登录>>
+                    </div>
+                </div>
+                <div class="login-item doctor-login fl">
+                    <div class="icon-div clearfix">
+                        <span class="fl tingzhenqi"></span>
+                        <p class="fl yisheng">
+                            我是医生
+                        </p>
+                    </div>
+                    <div class="item-text text-yisheng">
+                        <p>会诊转诊，远程影像，患者管理</p>
+                        <p>图像智能诊断，云影像中心</p>
+                    </div>
+                    <div class="item-btn yisheng" id="doctor">
+                        点我登录>>
+                    </div>
+                </div>
+                <div class="login-item survey-login fl">
+                    <div class="icon-div clearfix">
+                        <span class="fl yanjiu"></span>
+                        <p class="fl diaoyan">
+                            我是患者
+                        </p>
+                    </div>
+                    <div class="item-text text-diaoyan">
+                        <p>项目管理，样本管理，队列管理</p>
+                        <p>随访管理，数据采集，统计分析</p>
+                    </div>
+                    <div class="item-btn diaoyan">
+                        点我登录>>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script>
+    $(function(){
+        $("#doctor").on("click",function(){
+            window.location.href="./login.html?user=doctor"
+        })
+    })
+</script>
+</html>

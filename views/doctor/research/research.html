@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的科研</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/main.css"/>
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="sidebar" id="sidebar-high">
+            <div class="sidebar_head">
+                我的科研平台
+            </div>
+            <ul class="sidebar_nav">
+                <li>项目管理</li>
+                <li>样本管理</li>
+                <li>随访管理</li>
+                <li>队列管理</li>
+                <li>数据字典</li>
+                <li>统计分析</li>
+            </ul>
+        </div>
+        <div class="content container-high">
+            <div class="research_detail">
+                <ul class="clearfix">
+                    <li>
+                        <div class="research_info">
+                            <div class="research_tit">妇科肿瘤治疗中相关循证医学证据验证</div>
+                            <div class="research_tit_en">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</div>
+                            <div class="research_date">陈谨毅；2018年11月14日 09:13:41创建；</div>
+                        </div>
+                        <div class="research_digital clearfix">
+                            <div class="research_num">
+                                <strong>61</strong>
+                                <br>
+                                研究对象总数
+                            </div>
+                            <div class="research_num">
+                                <strong>3</strong>
+                                <br>
+                                随访任务数
+                            </div>
+                            <div class="research_status bg-processing">进行中</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="research_info">
+                            <div class="research_tit">生殖道感染防治与循证</div>
+                            <div class="research_tit_en">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</div>
+                            <div class="research_date">陈谨毅；2018年11月14日 09:13:41创建；</div>
+                        </div>
+                        <div class="research_digital clearfix">
+                            <div class="research_num">
+                                <strong>11</strong>
+                                <br>
+                                研究对象总数
+                            </div>
+                            <div class="research_num">
+                                <strong>4</strong>
+                                <br>
+                                随访任务数
+                            </div>
+                            <div class="research_status bg-processing">进行中</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="research_info">
+                            <div class="research_tit">避孕方法的选择与循证</div>
+                            <div class="research_tit_en">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</div>
+                            <div class="research_date">陈谨毅；2018年11月14日 09:13:41创建；</div>
+                        </div>
+                        <div class="research_digital clearfix">
+                            <div class="research_num">
+                                <strong>178</strong>
+                                <br>
+                                研究对象总数
+                            </div>
+                            <div class="research_num">
+                                <strong>9</strong>
+                                <br>
+                                随访任务数
+                            </div>
+                            <div class="research_status bg-complete">进行中</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="research_info">
+                            <div class="research_tit">妇科肿瘤其他诱发原因的验证</div>
+                            <div class="research_tit_en">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</div>
+                            <div class="research_date">陈谨毅；2018年12月18日 10:13:41创建；</div>
+                        </div>
+                        <div class="research_digital clearfix">
+                            <div class="research_num">
+                                <strong>13</strong>
+                                <br>
+                                研究对象总数
+                            </div>
+                            <div class="research_num">
+                                <strong>2</strong>
+                                <br>
+                                随访任务数
+                            </div>
+                            <div class="research_status bg-wait">待发布</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="research_info">
+                            <div class="research_tit">生殖道其他疾病诱发原因</div>
+                            <div class="research_tit_en">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</div>
+                            <div class="research_date">陈谨毅；2018年11月14日 09:13:41创建；</div>
+                        </div>
+                        <div class="research_digital clearfix">
+                            <div class="research_num">
+                                <strong>36</strong>
+                                <br>
+                                研究对象总数
+                            </div>
+                            <div class="research_num">
+                                <strong>8</strong>
+                                <br>
+                                随访任务数
+                            </div>
+                            <div class="research_status bg-fail">已锁定</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery.min.js"></script>
+	
+	<script>
+		$(function () {
+			var screenHeight = $('#sidebarLeft').height();
+			$('.container-high').css('minHeight', screenHeight - 100);
+			$('#sidebar-high').height($('.container-high').height());
+
+			
+		})
+	</script>
+</body>
+</html>

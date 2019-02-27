@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中南大学湘雅医院妇产科医联体登录</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <link rel="stylesheet/less" href="./css/common.less">
+    <link rel="stylesheet/less" href="./css/login.less">
+    <script src="./js/less.min.js"></script>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="content">
+            <div class="logo-box">
+                <img class="logo" src="./images/logo.png" alt="logo" title="中南大学湘雅医院妇产科医联体">
+                <p>中南大学湘雅医院妇产科医联体</p>
+                <p>医生登录</p>
+            </div>
+            <div class="login-box">
+                <div class="item clearfix">
+                    <div class="fl left">
+                        <img src="./images/yisheng.svg" alt="用户名" title="用户名">
+
+                    </div>
+
+                    <div class="fl right">
+                        <input type="text" placeholder="请输入登录账号">
+                    </div>
+                </div>
+                <div class="item clearfix">
+                    <div class="fl left">
+                        <img src="./images/mima.svg" alt="密码" title="密码">
+                    </div>
+                    <div class="fl right">
+                        <input type="text" placeholder="请输入登录密码">
+                    </div>
+                </div>
+                <div class="btn retrieve-btn" id="retrieve">找回密码>></div>
+                <div class="btn login-btn" id="login">登录</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script>
+    $(function () {
+        $("#login").on("click",function(){
+            window.location.href="./views/doctor/doctor.html"
+        })
+    })
+</script>
+
+</html>

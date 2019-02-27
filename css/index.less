@@ -1,0 +1,187 @@
+@import "./baseColor.less";
+.content {
+            width: 1288px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            background: rgba(250, 250, 250, .9);
+            .header {
+                height: 88px;
+                .left {
+                    cursor: pointer;
+                    .logo {
+                        display: inline-block;
+                        height: 80px;
+                        width: 80px;
+                        background: url("../images/logo.png") no-repeat;
+                        background-size: 100%;
+                        vertical-align: middle;
+                        margin-top: 4px;
+                    }
+                    .logo-text {
+                        display: inline-block;
+                        color: @baseFontColor;
+                        vertical-align: middle;
+                        h3 {
+                            font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+                            font-weight: 700;
+                            font-style: normal;
+                            font-size: 28px;
+                        }
+                        p {
+                            font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+                            font-weight: 700;
+                            font-style: normal;
+                            font-size: 20px;
+                            text-align: right;
+                            margin-top: 2px;
+                        }
+                    }
+                }
+                .right {
+                    margin-right: 80px;
+                    li {
+                        line-height: 88px;
+                        width: 114px;
+                        height: 88px;
+                        text-align: center;
+                        font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+                        font-weight: 700;
+                        font-style: normal;
+                        font-size: 16px;
+                        box-sizing: border-box;
+                        cursor: pointer;
+                    }
+                    li:hover {
+                        background: @hoverListBg;
+                        color: #fff;
+                    }
+                }
+                
+            }
+            .banner {
+                height: 486px;
+                border-radius: 15px;
+                background: url("../images/banner.png") no-repeat;
+                background-size: 100%;
+                margin-bottom: 20px;
+            }
+            .tab-login {
+                height: 330px;
+                .login-item {
+                    width: 400px;
+                    height: 100%;
+                    box-sizing: border-box;
+                    border: 3px solid #fff;
+                    border-radius: 15px;
+                    background: #fff;
+                    padding: 30px 0;
+                    box-sizing: border-box;
+                    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+                    .icon-div {
+                        width: 280px;
+                        margin: 0 auto;
+                        height: 121px;
+                        p,span {
+                            height: 100%;
+                        }
+                        span {
+                            width: 121px;
+                            vertical-align: middle;
+                        }
+                        span.zhusheqi {
+                            background: url("../images/zhusheqi.svg") no-repeat;
+                            background-size: 100%;
+
+                        }
+                        span.tingzhenqi {
+                            background: url("../images/tingzhenqi.svg") no-repeat;
+                            background-size: 100%;
+
+                        }
+                        span.yanjiu {
+                            background: url("../images/yanjiu.svg") no-repeat;
+                            background-size: 100%;
+                        }
+                        p {
+                            vertical-align: middle;
+                            height: 121px;
+                            line-height: 121px;
+                            margin-left: 16px;
+                            font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+                            font-weight: 700;
+                            font-style: normal;
+                            font-size: 20px;
+                        }
+                        .huanzhe {
+                            color: rgba(120, 54, 160, 1);
+                        }
+                        .yisheng {
+                            color: #0C4C8E;
+                        }
+                        .diaoyan {
+                            color: #33CCFF;
+                        }
+                    }
+                    .item-text {
+                        width: 280px;
+                        height: 70px;
+                        margin: 0px auto 20px auto;
+                        font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+                        font-weight: 700;
+                        font-style: normal;
+                        font-size: 20px;
+                        color: #999999;
+                    }
+                    .item-text.text-huanzhe {
+                        p {
+                            line-height: 70px;
+                            text-align: center;
+                        }
+                    }
+                    .item-text.text-yisheng,
+                    .item-text.text-diaoyan {
+                        p {
+                            line-height: 35px;
+                            text-align: center;
+                        }
+                    }
+                    .item-btn {
+                        width: 200px;
+                        height: 55px;
+                        line-height: 55px;
+                        text-align: center;
+                        margin: 0 auto;
+                        border-radius: 15px;
+                        font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+                        font-weight: 700;
+                        font-style: normal;
+                        font-size: 20px;
+                        color: #FFFFFF;
+                        cursor: pointer;
+                    }
+                    .item-btn.huanzhe {
+                        background: rgba(120, 54, 160, 1);
+                    }
+                    .item-btn.yisheng {
+                        background: rgba(12, 76, 142, 1);
+                    }
+                    .item-btn.diaoyan {
+                        background: rgba(51, 204, 255, 1);
+                    }
+                }
+                .login-item.patient-login {
+                    border-color: rgba(120, 54, 160, 1);
+                    margin-right: 24px;
+                }
+                .login-item.doctor-login {
+                    border-color: rgba(12, 76, 142, 1);
+                    margin-right: 24px;
+                }
+                .login-item.survey-login {
+                    border-color: rgba(51, 204, 255, 1);
+                }
+            }
+}
+

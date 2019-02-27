@@ -1,0 +1,521 @@
+html,body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.my-consultation {
+    height: 100%;
+}
+.sidebar{
+    float: left;
+    /* width: 350px; */
+    width: 22.5%;
+    background: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #bbb
+}
+ .content{
+    float: left;
+    width: 70.5%;
+    margin-left: 2.5%;
+    background: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #bbb;
+    height: 100%;
+    overflow: hidden;
+}
+.content iframe {
+    width: 100%;
+    height: 100%;
+}
+.sidebar_head{
+    font-size: 17px;
+    font-weight: 600;
+    padding: 20px 0 0 20px;
+    position: relative;
+}
+.sidebar_head a{
+    font-size: 15px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #0099FF;
+    font-weight: normal;
+    cursor: pointer;
+}
+.sidebar_head a i{
+    font-size: 17px;
+    vertical-align: middle
+}
+.sidebar_list{
+    padding: 10px 20px;
+}
+.sidebar_list li{
+    position: relative;
+    padding: 6px 0;
+    border-bottom: 1px solid #e4e4e4;
+    cursor: pointer;
+}
+.sidebar_list li>div {
+    padding: 6px 0;
+    height: 100%;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    border-radius: 15px;
+}
+.sidebar_list li.active>div{
+    border: 2px solid rgba(121, 121, 121, 1);
+}
+.sidebar_list li>div:hover {
+    border: 2px solid rgba(121, 121, 121, 1);
+}
+.sidebar_list li .item_pic{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    width: 54px;
+    height: 54px;
+    margin-top: -27px;
+    border-radius: 50%;
+    
+}
+.sidebar_list li .item_pic img{
+    width: 54px;
+    display: block;
+}
+
+.router .sidebar_list li .item_pic {
+    
+    text-align: center;
+    
+}
+.router .sidebar_list li.green .item_pic,
+.router .sidebar_list li.green .item_status {
+    background: rgb(0,128,0);
+}
+.router .sidebar_list li.blue .item_pic,
+.router .sidebar_list li.blue .item_status {
+    background: rgb(0,153,255);
+}
+.router .sidebar_list li.red .item_pic,
+.router .sidebar_list li.red .item_status {
+    background: rgb(255,0,0);
+    
+}
+.router .sidebar_list li .item_status {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 50%;
+    color: #fff;
+}
+.router .sidebar_list li .item_pic img{
+    width: 26px;
+    padding: 14px;
+}
+.sidebar_list .item_tit{
+    padding: 6px 0 6px 85px;
+    font-size: 16px;
+}
+.sidebar_list .item_info{
+    padding-left: 85px;
+    font-size: 14px;
+}
+.sidebar_list li .item_status{
+    position: absolute;
+    right: 10px;
+    top:24px;
+}
+.sidebar_list li .item_status i{
+    font-size:24px;
+}
+.sidebar_list li i.color-success{
+    color: #008000;
+}
+.sidebar_list li i.color-processing{
+    color: #0099ff;
+}
+.sidebar_list li i.color-over{
+    color: #e71e23;
+}
+.consultation-info {
+    position: relative;
+    z-index: 1;
+}
+.consultation-step {
+    position: absolute;
+    z-index: 2;
+    display: inline-block;
+    width: 30px;
+    height: 180px;
+    top: 50%;
+    right: 0;
+    margin-top: -90px;
+    margin-right: 10px;
+}
+.consultation-step i.iconfont {
+    font-size: 28px;
+    cursor: pointer;
+    color: #ddd;
+}
+.consultation-step span.circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgb(17, 17, 17);
+    border-radius: 50%;
+    margin: 8px;
+    cursor: pointer;
+
+}
+.consultation-step span.circle.active {
+    background: rgb(17, 17, 17);
+}
+.consultation_detail{
+    padding: 30px 0;
+    width: 92%;
+    margin: 0 auto;
+    font-size: 14px;
+}
+.consultation_detail h3{
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.consultation_detail .detail_text{
+    border-bottom: 1px solid #e4e4e4;
+    overflow: hidden;
+}
+@media screen and (max-width: 1365px) {
+    .consultation_detail .detail_text{
+        padding: 20px 10px;
+    }
+}
+@media screen and (min-width: 1366px) {
+    .consultation_detail .detail_text{
+        padding: 20px 100px;
+    }
+}
+.consultation_detail .detail_text span {
+    display: inline-block;
+    float: left;
+    width: 33.33%;
+    font-family: '微软雅黑';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #666666;
+}
+.consultation_detail .detail_text p{
+    font-family: '微软雅黑';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #666666;
+    padding: 12px 0;
+}
+.consultation_detail .detail_down {
+    padding: 20px 0;
+}
+.consultation_detail .detail_down span{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.consultation_detail .detail_down span img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.consultation_detail .detail_dicom {
+    padding: 20px 0;
+    overflow: hidden;
+}
+.consultation_detail .detail_dicom div {
+    width: 33.33%;
+    text-align: center;
+}
+.consultation_detail .detail_dicom div img {
+    width: 160px;
+    height: 160px;
+}
+.consultation_detail .detail_select {
+    padding: 6px 20px;
+}
+.consultation_detail .detail_select select {
+    width: 200px;
+    border: 1px solid #ddd;
+    margin-left: 20px;
+}
+.consultation_detail .detail_string textarea{
+    width: 100%;
+    border: 1px solid #ddd;
+    min-height: 400px;
+    text-indent: 1em;
+    padding: 8px 0;
+}
+.consultation_detail .detail_submit {
+    text-align: center;
+    padding-top: 20px;
+}
+.consultation_detail .detail_submit span {
+    display: inline-block;
+    width: 200px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 15px;
+    color: #fff;
+    background: rgba(0, 153, 255, 1);
+    cursor: pointer;
+}
+.consultation_detail.opinions {
+    padding: 20px 0px;
+}
+.consultation_detail.opinions p {
+    font-family: '微软雅黑';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #666666;
+    padding: 10px 40px;
+} 
+.sidebar_nav{
+    padding: 20px 25px;
+}
+.sidebar_nav li{
+    background: #d7d7d7;
+    border-radius: 15px;
+    line-height: 46px;
+    font-size: 17px;
+    margin-bottom: 25px;
+    text-align: center
+}
+.research_detail{
+    padding: 35px 20px 35px 35px;
+}
+.research_detail ul li{
+    float: left;
+    background-color: #d7d7d7;
+    width: 30%;
+    margin-right: 1%;
+    margin-bottom: 10px;
+    padding: 1%;
+    border-radius: 15px;
+}
+.research_detail ul li .research_tit{
+    font-size: 15px;
+    padding: 3px 0 8px;
+    color: #333333;
+}
+.research_detail ul li .research_tit_en{
+    font-size: 12px;
+    padding-bottom: 20px;
+    color: #666666;
+}
+.research_date{
+    font-size: 13px;
+    padding-bottom: 5px;
+    color: #666666;
+}
+.research_detail ul li .research_info{
+    border-bottom:1px solid #909090;
+}
+.research_digital{
+    position: relative;
+    padding-top: 5px;
+}
+.research_digital .research_num{
+    float: left;
+    width: 40%;
+    font-size: 15px;
+}
+.research_digital .research_status{
+    position: absolute;
+    right: 10px;
+    top:17px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px 7px;
+}
+.research_digital div.bg-wait{
+    background-color: #0099ff;
+}
+.research_digital div.bg-processing{
+    background-color: #008000;
+}
+.research_digital div.bg-complete{
+    background-color: #999;
+}
+.research_digital div.bg-fail{
+    background-color: #e71e23;
+}
+.user_content{
+    background: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #bbb
+}
+.user_middle{
+    padding:10px 30px 20px;
+}
+.user_middle h3{
+    font-size: 17px;
+    font-weight: normal;
+    padding: 20px 0;
+}
+.user_middle .user_detail {
+    padding: 0 50px 25px;
+    border-bottom: 1px solid #e4e4e4;
+}
+.user_content .pic_top{
+    width: 140px;
+    height: 140px;
+    border: 1px solid #b4b4b3;
+    border-radius: 50%;
+    float: left;
+    margin-right: 100px;
+}
+.user_content .pic_top img{
+    display: block;
+    width: 100%;
+}
+.user_content .info_top{
+    float: left;
+    font-size: 16px;
+}
+.user_content .info_top p{
+    padding-top: 15px;
+}
+.user_form .input_box ul li{
+    float: left;
+    width: 33%;
+}
+.user_form .input_box label{
+    font-size: 15px;
+    line-height: 35px;
+    display: inline-block;
+}
+.user_form .input_box input.input_control{
+    border: 1px solid #ddd;
+    font-size: 14px;
+    border-radius: 3px;
+    width: 200px;
+    padding: 0 15px;
+    height: 35px;
+}
+.user_form .input_box .textarea_control{
+    width: 98%;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    border-radius: 3px;
+}
+.user_form .form_button{
+    padding-top: 30px;
+    text-align: center;
+}
+.user_form .form_button button{
+    text-align: center;
+    background: #0099ff;
+    color: #fff;
+    border: none;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-right: 50px;
+    outline: none;
+    cursor: pointer;
+}
+.form_submit h3{
+    font-size: 17px;
+    font-weight: normal;
+    padding: 20px 0;
+}
+.form_submit{
+    padding:10px 40px;
+}
+.form_submit .input_box ul{
+    border-bottom:1px solid #ddd;
+    padding-bottom: 30px;
+}
+.form_submit .input_box input.input_control{
+    width: 150px;
+}
+.form_submit .input_box.textarea_box label{
+    float: left;
+    width: 10%;
+}
+.form_submit .input_box .textarea_control{
+    float: left;
+    width: 88%;
+}
+.form_submit .input_box label{
+    width: 90px;
+    text-align: right;
+}
+
+.icon-chenggong {
+    color: rgb(0,128,0);
+}
+.icon-wenhao {
+    color: rgb(0,153,255)
+}
+.consultation-item {
+    display: none;
+}
+.consultation-item.active {
+    display:list-item;
+}
+.router .content {
+    padding: 40px;
+    box-sizing: border-box;
+}
+.echart {
+    margin: 0 auto;
+    width: 90%;
+    height: 400px;
+}
+
+.router .content .info-box {
+    display: inline-block;
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.router .content .info-box h4 {
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 110px;
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.router .content .info-box p {
+    font-size:18px;
+}
+.router .content .info-box h4.green {
+    background: rgb(0,128,0);
+}
+.router .content .info-box h4.blue {
+    background: rgb(0,153,255)
+}
+.router .content .info-box h4.yellow {
+    background: rgb(172,95,43)
+}
+.router .content .info-box h4.purple {
+    background: rgb(108,45,213);
+}
+.router .content .info-box h4.grey {
+    background: rgb(102,102,153);
+}

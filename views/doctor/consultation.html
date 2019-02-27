@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中南大学湘雅医院妇产科医联体医生工作台</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
+    <link rel="stylesheet" href="../../css/consultation.css">
+    <!-- <script src="../../js/less.min.js"></script> -->
+</head>
+
+<body>
+    <div class="my-consultation">
+        <div class="sidebar" id="sidebar-high">
+            <div class="sidebar_head">
+                我的会诊
+                <a id="consultationApply"><i class="iconfont icon-yuanchenghuizhen1"></i> 申请会诊</a>
+            </div>
+            <ul class="sidebar_list">
+                <li class="done active">
+                    <div>
+                        <div class="item_pic"><img src="../../images/default01.png" alt=""></div>
+                        <div class="item_tit">子宫肌瘤</div>
+                        <div class="item_info">
+                            <span class="item_name">赵孟</span>
+                            <span class="item_hospital">湖南省肿瘤医院</span>
+                        </div>
+                        <div class="item_status"><i class="iconfont icon-chenggong"></i></div>
+                    </div>
+                </li>
+                <li class="done">
+                    <div>
+                        <div class="item_pic"><img src="../../images/default02.png" alt=""></div>
+                        <div class="item_tit">宫颈癌</div>
+                        <div class="item_info">
+                            <span class="item_name">王炳华</span>
+                            <span class="item_hospital">长沙市中医院</span>
+                        </div>
+                        <div class="item_status"><i class="iconfont icon-chenggong"></i></div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <div class="item_pic"><img src="../../images/default01.png" alt=""></div>
+                        <div class="item_tit">子宫肌瘤</div>
+                        <div class="item_info">
+                            <span class="item_name">赵孟</span>
+                            <span class="item_hospital">湖南省肿瘤医院</span>
+                        </div>
+                        <div class="item_status"><i class="iconfont icon-wenhao"></i></div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <div class="item_pic"><img src="../../images/default02.png" alt=""></div>
+                        <div class="item_tit">子宫肌瘤</div>
+                        <div class="item_info">
+                            <span class="item_name">赵孟</span>
+                            <span class="item_hospital">湖南省肿瘤医院</span>
+                        </div>
+                        <div class="item_status"><i class="iconfont icon-wenhao"></i></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="content container-high">
+            <iframe src="./consultationInfo.html" frameborder="0" id="consultationInfo"></iframe>
+        </div>
+
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script>
+    $(function () {
+        var $sidebarLists = $(".sidebar_list li");
+        $sidebarLists.on("click", function () {
+            var $this = $(this);
+            if($this.hasClass("active")) return false;
+            $sidebarLists.removeClass("active");
+            $this.addClass("active");
+            if ($this.hasClass("done")) {
+                $("#consultationInfo").attr("src", "./consultationInfo.html")
+            } else {
+                $("#consultationInfo").attr("src", "./consultationApply.html")
+            }
+        });
+        $("#consultationApply").on("click",function(){
+            $("#consultationInfo").attr("src", "./apply.html")
+        })
+    })
+</script>
+
+</html>

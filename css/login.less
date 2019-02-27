@@ -1,0 +1,114 @@
+@import "./baseColor.less";
+
+.content {
+    width: 510px;
+    margin: 0px auto;
+    padding-top: 140px;
+    .logo-box {
+        width: 280px;
+        margin: 0 auto;
+        text-align: center;
+        img.logo {
+            width: 81px;
+            height: 81px;
+            margin-bottom: 22px;
+        }
+        p {
+            height: 27px;
+            font-family: '微软雅黑';
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+            color: #FFFFFF;
+            line-height: 27px;
+            text-align: center;
+            margin: 2px 0;
+        }
+    }
+    .login-box {
+        margin-top: 42px;
+        height: 225px;
+        padding: 25px 50px 0 50px;
+        background: rgba(215, 215, 215, .9);
+        position: relative;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+        .item {
+            height: 65px;
+            margin-bottom: 20px;
+            .left {
+                width: 100px;
+                height: 100%;
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin-top: 7px;
+                }
+            }
+            .right {
+                height: 65px;
+                input {
+                    height: 37px;
+                    line-height: 37px;
+                    margin-top: 14px;
+                    box-sizing: border-box;
+                    width: 268px;
+                }
+                input:focus{
+                    border: 2px solid rgb(137,171,227);
+                    box-shadow: -1px 1px -1px rgb(137,171,227);
+
+                }
+            }
+        }
+        .retrieve-btn {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            margin-right: 12px;
+            margin-bottom: 12px;
+            font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+            font-weight: 700;
+            font-style: normal;
+            font-size: 16px;
+            color: #666666;
+        }
+        .login-btn {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -105px;
+            margin-bottom: -32px;
+            width: 210px;
+            height: 64px;
+            line-height: 64px;
+            background: rgba(0, 153, 255, 1);
+            font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+            font-weight: 700;
+            font-style: normal;
+            font-size: 18px;
+            color: #FFFFFF;
+            border-radius: 15px;
+            letter-spacing:30px;
+            padding-left: 30px;  //  解决 设置文字间距不居中
+            box-sizing: border-box;
+            text-align: center;
+            box-shadow: 5px 5px 5px rgb(137,171,227);
+        }
+        .btn {
+            cursor: pointer;
+        }
+    }
+    .login-box::before {
+        content: "";
+        width:0;
+        height:0;
+        border-width:0 30px 30px;
+        border-style:solid;
+        border-color:transparent transparent rgba(215, 215, 215,.9);
+        position: relative;
+        top: -75px;
+        left: 50%;
+        margin-left: -30px;
+        color: rgba(215, 215, 215, .9);
+    }
+}

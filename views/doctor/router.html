@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中南大学湘雅医院妇产科医联体医生工作台</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
+    <link rel="stylesheet" href="../../css/consultation.css">
+    <!-- <script src="../../js/less.min.js"></script> -->
+    <style>
+        html,body {
+            width: 100%;
+            height: 100%;
+        }
+    
+    
+    
+    </style>
+</head>
+
+<body class="router">
+    <div class="my-consultation">
+        <div class="sidebar" id="sidebar-high">
+            <div class="sidebar_head">
+                通知
+                <!-- <a id="consultationApply"><i class="iconfont icon-yuanchenghuizhen1"></i> 申请会诊</a> -->
+            </div>
+            <ul class="sidebar_list">
+                <li class="done active green">
+                    <div>
+                        <div class="item_pic "><img src="../../images/ld1.png" alt=""></div>
+                        <div class="item_tit">子宫肌瘤</div>
+                        <div class="item_info">
+                            <span class="item_name">赵孟</span>
+                            <span class="item_hospital">湖南省肿瘤医院</span>
+                        </div>
+                        <div class="item_status">会</div>
+                    </div>
+                </li>
+                <li class="done blue">
+                    <div>
+                        <div class="item_pic "><img src="../../images/ld1.png" alt=""></div>
+                        <div class="item_tit">宫颈癌</div>
+                        <div class="item_info">
+                            <span class="item_name">王炳华</span>
+                            <span class="item_hospital">长沙市中医院</span>
+                        </div>
+                        <div class="item_status">影</div>
+                    </div>
+                </li>
+                <li class="red">
+                    <div>
+                        <div class="item_pic "><img src="../../images/ld1.png" alt=""></div>
+                        <div class="item_tit">子宫肌瘤</div>
+                        <div class="item_info">
+                            <span class="item_name">赵孟</span>
+                            <span class="item_hospital">湖南省肿瘤医院</span>
+                        </div>
+                        <div class="item_status">转</div>
+                    </div>
+                </li>
+                <li class="green">
+                    <div>
+                        <div class="item_pic "><img src="../../images/ld1.png" alt=""></div>
+                        <div class="item_tit">子宫肌瘤</div>
+                        <div class="item_info">
+                            <span class="item_name">赵孟</span>
+                            <span class="item_hospital">湖南省肿瘤医院</span>
+                        </div>
+                        <div class="item_status">会</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="content container-high">
+            <div id="echart" class="echart"></div>
+            <div class="info">
+                <span class="info-box">
+                    <h4 class="green">4</h4>
+                    <p>待处理信息数</p>
+                </span>
+                <span class="info-box">
+                    <h4 class="blue">4</h4>
+                    <p>今日会诊人数</p>
+                </span>
+                <span class="info-box">
+                    <h4 class="yellow">4</h4>
+                    <p>今日转诊人数</p>
+                </span>
+                <span class="info-box">
+                    <h4 class="purple">4</h4>
+                    <p>今日远程影像辅诊人数</p>
+                </span>
+                <span class="info-box">
+                    <h4 class="grey">4</h4>
+                    <p>今日随访人数</p>
+                </span>
+            </div>
+        </div>
+
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/echarts.min3X.js"></script>
+<script>
+    $(function () {
+        var $sidebarLists = $(".sidebar_list li");
+        $sidebarLists.on("click", function () {
+            var $this = $(this);
+            if ($this.hasClass("active")) return false;
+            $sidebarLists.removeClass("active");
+            $this.addClass("active");
+            if ($this.hasClass("done")) {
+                $("#consultationInfo").attr("src", "./consultationInfo.html")
+            } else {
+                $("#consultationInfo").attr("src", "./consultationApply.html")
+            }
+        });
+
+
+        var echart = echarts.init(document.getElementById('echart'));
+        var option = {
+            color:["rgb(24,144,255)","rgb(250,204,20)","rgb(48,194,92)"],
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['会诊', '转诊', '复诊'],
+                bottom: "6%"
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '16%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['10-27', '10-28', '10-29', '10-30', '10-31', '11-01', '11-02'],
+                axisLine: {
+                    lineStyle: {
+                        color: '#ddd', // 颜色
+                        width: 2 // 粗细
+                    }
+                },
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#000'
+                    }
+                }
+            },
+            yAxis: {
+                type: 'value',
+                axisLine: { show: false },
+                axisTick: { show: false },
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        type: 'dashed'
+                    }
+                }
+
+            },
+            series: [
+                {
+                    name: '会诊',
+                    type: 'line',
+                    stack: '总量',
+                    data: [120, 60, 190, 134, 90, 230, 210]
+                },
+                {
+                    name: '转诊',
+                    type: 'line',
+                    stack: '总量',
+                    data: [220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name: '复诊',
+                    type: 'line',
+                    stack: '总量',
+                    data: [150, 232, 201, 154, 190, 330, 410]
+                }
+
+            ]
+        };
+
+
+        echart.setOption(option);
+
+        // 屏幕变化的时候  动态渲染echarts
+        window.onresize=function(){
+            echart.setOption(option);
+		}
+        
+    })
+</script>
+
+</html>
